@@ -12,7 +12,7 @@ declare module 'resolve' {
    * @param error
    * @param resolved Absolute path to resolved identifier
    */
-  type resolveCallback = (err: Error, resolved: string) => void;
+  type resolveCallback = (err: Error, resolved?: string) => void;
 
   /**
    * Callback invoked when checking if a file exists
@@ -20,7 +20,7 @@ declare module 'resolve' {
    * @param error
    * @param isFile If the given file exists
    */
-  type isFileCallback = (err: Error, isFile: boolean) => void;
+  type isFileCallback = (err: Error, isFile?: boolean) => void;
 
   /**
    * Callback invoked when reading a file
@@ -28,7 +28,7 @@ declare module 'resolve' {
    * @param error
    * @param isFile If the given file exists
    */
-  type readFileCallback = (err: Error, file: Buffer) => void;
+  type readFileCallback = (err: Error, file?: Buffer) => void;
 
   /**
    * Asynchronously resolve the module path string id into cb(err, res [, pkg]), where pkg (if defined) is the data from package.json
@@ -53,7 +53,7 @@ declare module 'resolve' {
    * @param id Identifier to resolve
    * @param options Options to use for resolving, optional.
    */
-  function resolveSync(id: string, opts: resolve.SyncOpts): string;
+  function resolveSync(id: string, opts?: resolve.SyncOpts): string;
 
   /**
    * Return whether a package is in core
